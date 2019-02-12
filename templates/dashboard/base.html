@@ -1,20 +1,35 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Twister is an open source social network where you can say whatever you want">
+	<meta name="author" content="Mauricio Chávez Olea">
+
 	{% load static %}
-	<link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="{% static 'css/Bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{%  static 'css/main.css' %}">
 	{% block head_content %}
-	<title>Twister.</title>
+	<title>Twister: Share whatever you want</title>
 	{% endblock head_content %}
 </head>
 
 <body>
-	{% block content %}
-	{% endblock content %}
+
+	{% include 'dashboard/navbar.html' %}
+
+	<main role="main" class="container">
+
+		<h1 class="display">Twister.</h1>
+		<p class="lead">
+			Fake Twitter.
+		</p>
+
+	</main>
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 
 </html>

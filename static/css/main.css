@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+	/* Extra space for navbar */
+	padding-top: 5rem;
+	/* Personal font in the whole website */
+	font-family: 'Nunito', sans-serif;
+}

@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class InboxConfig(AppConfig):
-    name = 'inbox'
+    name = 'twister.inbox'
+    verbose_name = 'Inbox'

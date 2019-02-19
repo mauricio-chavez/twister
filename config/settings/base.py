@@ -1,4 +1,4 @@
-"""Django settings for twister project."""
+"""Django base settings for twister project."""
 
 import os
 from pathlib import Path
@@ -9,16 +9,14 @@ import environ
 
 env = environ.Env(DEBUG=(bool, False),)
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+APPS_DIR = BASE_DIR / 'twister'
 
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-]
+ALLOWED_HOSTS = []
 
 # Apps
 
@@ -36,17 +34,17 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'posts',
-    'inbox',
-    'notifications',
-    'accounts',
+    'twister.posts.apps.PostsConfig',
+    'twister.inbox.apps.InboxConfig',
+    'twister.notifications.apps.NotificationsConfig',
+    'twister.accounts.apps.AccountsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Middleware
 
-MIDDLEWARE = [
+DJANGO_MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,13 +54,23 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+THIRD_PARTY_MIDDLEWARE = [
+    
+]
+
+LOCAL_MIDDLEWARE = [
+
+]
+
+MIDDLEWARE = DJANGO_MIDDLEWARE + THIRD_PARTY_MIDDLEWARE + LOCAL_MIDDLEWARE
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',
+            APPS_DIR / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,5 +129,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    APPS_DIR / 'static',
 ]

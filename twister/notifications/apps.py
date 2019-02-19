@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class NotificationsConfig(AppConfig):
-    name = 'notifications'
+    name = 'twister.notifications'
+    verbose_name = 'Notifications'

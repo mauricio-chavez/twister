@@ -1,14 +1,24 @@
 """Django settings for twister project."""
 
 import os
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import environ
 
-SECRET_KEY = ')!n1kqwp^lsr4o=l=b596uvdww2u^bz7ke#qb$v0&^y-c8s!z6'
+# Environment configuration
 
-DEBUG = True
+env = environ.Env(DEBUG=(bool, False),)
 
-ALLOWED_HOSTS = []
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = env('SECRET_KEY')
+
+DEBUG = env('DEBUG')
+
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+]
 
 # Apps
 
@@ -21,12 +31,18 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-LOCAL_APPS = [
-    'dashboard',
-    'accounts'
+THIRD_PARTY_APPS = [
+
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+LOCAL_APPS = [
+    'posts',
+    'inbox',
+    'notifications',
+    'accounts',
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Middleware
 
@@ -40,13 +56,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'twister.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            BASE_DIR / 'templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -60,16 +76,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'twister.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db(),
 }
 
 
@@ -108,5 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / 'static',
 ]

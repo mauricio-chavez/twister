@@ -1,14 +1,5 @@
-# Virtual env
-.env/
-
-# Sqlite3 Databases
-*.sqlite3
-
 # VSCode Folder
 .vscode/
-
-# Django migrations
-migrations/
 
 # pyc files
 __pycache__/

@@ -1,8 +1,50 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-<main class="container content">
-	<h1>Twister.</h1>
-	<p>Fake Twitter babe.</p>
+<main class="container">
+	<header class="text-center">
+		<h1>Your feed</h1>
+	</header>
+	<section class="mt-5">
+		<hr>
+		<article class="media mx-3 my-lg-4 my-3 my-lg-4">
+			<img src="{% static 'img/av_placeholder.jpeg' %}" class="img-thumbnail mr-3 " alt="" width=70>
+			<div class="media-body">
+				<h5 class="my-0">
+					<a href="">Mauricio</a>
+					<small class="text-muted">@TheOneAboveAll</small>
+				</h5>
+				<p class="text-muted text-small">18/Febuary/2019</p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sed magnam! Assumenda, iure, quia quaerat pariatur est
+				cum culpa laboriosam impedit alias cumque tenetur sapiente qui, iusto provident veritatis modi.
+				<div class="container mt-4">
+					<i class="post-icon text-muted mx-3 far fa-life-ring" data-toggle="tooltip" data-placement="bottom" title="Support!"></i>
+					<i class="post-icon text-muted mx-3 fas fa-sync-alt" data-toggle="tooltip" data-placement="bottom" title="Retwist"></i>
+					<i class="post-icon text-muted mx-3 far fa-comment-dots" data-toggle="tooltip" data-placement="bottom" title="Reply"></i>
+				</div>
+			</div>
+		</article>
+		<hr>
+		<article class="media mx-3 my-lg-4 my-3 my-lg-4">
+			<img src="{% static 'img/av_placeholder.jpeg' %}" class="img-thumbnail mr-3 " alt="" width=70>
+			<div class="media-body">
+				<h5 class="my-0">
+					<a href="">Mauricio</a>
+					<small class="text-muted">@TheOneAboveAll</small>
+				</h5>
+				<p class="text-muted text-small">18/Febuary/2019</p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, sed magnam! Assumenda, iure, quia quaerat pariatur est
+				cum culpa laboriosam impedit alias cumque tenetur sapiente qui, iusto provident veritatis modi.
+				<div class="container mt-4">
+					<i class="post-icon text-muted mx-3 far fa-life-ring" data-toggle="tooltip" data-placement="bottom" title="Support!"></i>
+					<i class="post-icon text-muted mx-3 fas fa-sync-alt" data-toggle="tooltip" data-placement="bottom" title="Retwist"></i>
+					<i class="post-icon text-muted mx-3 far fa-comment-dots" data-toggle="tooltip" data-placement="bottom" title="Reply"></i>
+				</div>
+			</div>
+		</article>
+		<hr>
+	</section>
 </main>
 {% endblock content %}

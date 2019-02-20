@@ -17,13 +17,26 @@ class Profile(models.Model):
         blank=True, 
         null=True
     )
-    biography = models.TextField('Biography', blank=True, default=None)
-    birthday = models.DateTimeField('Birthday', blank=True, null=True)
+    biography = models.CharField(
+        verbose_name='Biography',
+        max_length=100,
+        blank=True,
+        default=None
+    )
+    birthday = models.DateField('Birthday', blank=True, null=True)
     location = models.CharField('Location', max_length=15, blank=True, null=True)
     website = models.URLField('Website', blank=True, null=True)
-    following = models.ManyToManyField(User, related_name='profile_followers')
-    followers = models.ManyToManyField(User, related_name='profile_following')
+    following = models.ManyToManyField(
+        to=User, 
+        blank=True, 
+        related_name='profile_followers'
+    )
+    followers = models.ManyToManyField(
+        to=User,
+        blank=True,
+        related_name='profile_following'
+    )
 
     
     def __str__(self):
-        return f'@{ self.display_name }'
+        return f'{ self.display_name }'

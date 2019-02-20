@@ -3,3 +3,6 @@
 
 # pyc files
 __pycache__/
+
+# Media files
+media/

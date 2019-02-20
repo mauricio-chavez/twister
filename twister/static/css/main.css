@@ -6,3 +6,12 @@ body {
 	/* Personal font in the whole website */
 	font-family: 'Nunito', sans-serif;
 }
+
+.post-icon {
+	font-size: 1.3rem;
+}
+
+.post-icon:hover {
+	cursor: pointer;
+	color: black !important;
+}

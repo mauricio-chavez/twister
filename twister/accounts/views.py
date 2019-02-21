@@ -1,3 +1,2 @@
-from django.shortcuts import render
+"""Accounts views"""
 
-# Create your views here.

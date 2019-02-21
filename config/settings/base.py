@@ -131,3 +131,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     APPS_DIR / 'static',
 ]
+
+# Authentication
+
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'posts:index'

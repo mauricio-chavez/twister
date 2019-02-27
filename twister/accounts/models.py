@@ -14,14 +14,14 @@ class Profile(models.Model):
     avatar = models.ImageField(
         verbose_name='Avatar',
         upload_to='avatars',
-        blank=True, 
-        null=True
+        blank=True,
+        default='avatars/placeholder.gif'
     )
     biography = models.CharField(
         verbose_name='Biography',
         max_length=100,
         blank=True,
-        default=None
+        null=True
     )
     birthday = models.DateField('Birthday', blank=True, null=True)
     location = models.CharField('Location', max_length=15, blank=True, null=True)

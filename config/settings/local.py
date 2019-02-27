@@ -25,5 +25,3 @@ MIDDLEWARE += [
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = APPS_DIR / 'media'
-
-CACHE_TIMEOUT = 30

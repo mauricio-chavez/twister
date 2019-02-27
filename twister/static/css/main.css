@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 body {
-	/* Extra space for navbar */
-	padding-top: 5rem;
 	/* Personal font in the whole website */
 	font-family: 'Nunito', sans-serif;
 }
@@ -14,4 +12,15 @@ body {
 .post-icon:hover {
 	cursor: pointer;
 	color: black !important;
+}
+
+.nav-logout {
+	display: flex;
+	box-sizing: border-box;
+	align-items: center;
+	height: 35px;
+}
+
+.logout-icon {
+	font-size: 1.6rem;
 }

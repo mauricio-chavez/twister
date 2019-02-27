@@ -1,7 +1,11 @@
+.errors-alert {
+    margin-top: 7%;
+}
+
 @media screen and (max-width: 450px) {
 
     .register-form {
-        margin-top: 10%;
+        margin-top: 20%;
     }
 
     .errors-alert {
@@ -20,7 +24,7 @@
     }
 
     .errors-alert {
-        margin-top: 47.3%;
+        margin-top: 52.3%;
     }
 }
 

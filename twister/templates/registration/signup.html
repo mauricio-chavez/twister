@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head_content %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<title>Register!</title>
+{% endblock head_content %}
+
+{% block content %}
+<main>
+  <div class="sidenav">
+    <div class="login-main-text">
+      <h2>Twister</h2>
+      <p>Login or register from here to access.</p>
+    </div>
+  </div>
+  <div class="main mb-5 mb-lg-auto">
+    <div class="col-md-6 col-sm-12">
+      {% if form.non_field_errors %}
+      <div class="alert alert-danger errors-alert">
+        {% for error in form.non_field_errors %}
+        {{ error }}
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="login-form {% if form.non_field_errors %} login-form-errors {% endif %} ">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <input name="email" type="email" class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+              placeholder="Email address" {% if form.errors %}value="{{ form.email.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.email.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="first_name" type="text" class="form-control {% if form.first_name.errors %} is-invalid {% endif %}"
+              placeholder="First Name"  {% if form.errors %}value="{{ form.first_name.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.first_name.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="last_name" type="text" class="form-control {% if form.last_name.errors %} is-invalid {% endif %}"
+              placeholder="Last Name" {% if form.errors %}value="{{ form.last_name.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.last_name.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="username" type="text" class="form-control {% if form.username.errors %} is-invalid {% endif %}"
+              placeholder="Username" {% if form.errors %}value="{{ form.username.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.username.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="password" type="password" class="form-control {% if form.password.errors %} is-invalid {% endif %}"
+              placeholder="Password"  {% if form.errors %}value="{{ form.password.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.password.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="password_confirmation" type="password" class="form-control {% if form.password_confirmation.errors %} is-invalid {% endif %}"
+              placeholder="Password confirmation" {% if form.errors %}value="{{ form.password_confirmation.value }}"{% endif %} required>
+            <div class="invalid-feedback">
+              {% for error in form.password_confirmation.errors %}
+              {{ error }}
+              {% endfor %}
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger">Register!</button>
+          <a role="button" class="btn btn-secondary" href="{% url 'accounts:login' %}">Already have an account?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

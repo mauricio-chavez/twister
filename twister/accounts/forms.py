@@ -2,6 +2,7 @@
 
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 from .models import Profile
 
@@ -35,7 +36,7 @@ class SignupForm(forms.Form):
                     f'You cannot be me!'
                 )
             raise forms.ValidationError(
-                f'@{ username } is already in use.'
+                f'{ username } is already in use.'
             )
         return username
 
@@ -62,3 +63,6 @@ class SignupForm(forms.Form):
         user = User.objects.create_user(**data)
         Profile.objects.create(user=user, display_name=username)
         # profile.save()
+
+    def send_info_message(self, request):
+        messages.add_message(request, messages.INFO, 'Complete your profile information')

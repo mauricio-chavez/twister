@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 body {
 	/* Personal font in the whole website */
-	font-family: 'Nunito', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title {
+	font-family: 'Lilita One', cursive;
 }
 
 .post-icon {

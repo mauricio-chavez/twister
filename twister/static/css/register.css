@@ -11,7 +11,7 @@ body {
 
 .sidenav {
     height: 100%;
-    background-color: #dc3545;
+    background-color: #ffc107;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -51,7 +51,7 @@ body {
 .login-main-text {
     margin-top: 20%;
     padding: 60px;
-    color: #fff;
+    color: black;
 }
 
 .login-main-text h2 {

@@ -1,5 +1,5 @@
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
-	<a class="navbar-brand" href="#">Navbar</a>
+<nav class="mb-1 navbar navbar-expand-lg navbar-light bg-warning fixed-top">
+	<a class="navbar-brand title" href="{% url 'posts:index' %}">Twister</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
 	 aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -15,15 +15,21 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">Messages</a>
 			</li>
+			<li class="nav-item d-lg-none">
+				<a href="" class="nav-link">Profile</a>
+			</li>
+			<li class="nav-item d-lg-none">
+				<a href="" class="nav-link">Logout</a>
+			</li>
 		</ul>
 		<ul class="navbar-nav ml-auto nav-flex-icons">
-			<li class="nav-item avatar">
+			<li class="nav-item avatar d-lg-inline d-none mr-2">
 				<a class="nav-link p-0" href="#">
-					<img src="{{ request.user.profile_user.avatar.url }}" class="rounded-circle z-depth-0" alt="avatar image"
-					 height="35" width="35">
+					<img src="{{ request.user.profile_user.avatar.url }}" class="rounded-circle z-depth-0" alt="avatar image" height="35"
+					 width="35">
 				</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item d-lg-inline d-none">
 				<a href="{% url 'accounts:logout' %}" class="nav-link py-0 px-2 nav-logout ">
 					<i class="fas fa-sign-out-alt logout-icon"></i>
 				</a>

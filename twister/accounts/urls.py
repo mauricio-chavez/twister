@@ -23,4 +23,9 @@ urlpatterns = [
         view=views.SignupView.as_view(),
         name='signup'
     ),
+    path(
+        route='update/<int:pk>',
+        view=views.ProfileUpdateView.as_view(),
+        name='update'
+    ),
 ]

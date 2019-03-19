@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 768px) {
     .login-form {
-        margin-top: 70%;
+        margin-top: 40%;
     }
 
     .register-form {
@@ -24,11 +24,11 @@
     }
 
     .errors-alert {
-        margin-top: 52.3%;
+        margin-top: 25%;
     }
 }
 
 
 .login-form-errors {
-    margin-top: 0;
+    margin-top: 2rem;
 }
